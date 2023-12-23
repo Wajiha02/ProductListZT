@@ -1,0 +1,2997 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product Display</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid rgb(250, 244, 244);
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: rgb(110, 110, 250);
+      color: white;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(45deg, #49a09d, #b45bef);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1 id="title">Product Lists</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Subcategory</th>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Popularity</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+    </tbody>
+  </table>
+</div>
+
+<script>
+  var tableData = [
+    {
+      "subcategory": "mobile",
+      "title": "Micromax Canvas Spark",
+      "price": "4999",
+      "popularity": "51936"
+    },
+    {
+      "subcategory": "mobile",
+      "title": "Samsung Galaxy Grand Max",
+      "price": "12950",
+      "popularity": "48876"
+    },
+    {
+      "subcategory": "mobile",
+      "title": "Apple iPhone 6",
+      "price": "40999",
+      "popularity": "46198"
+    },
+
+    {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy Grand Prime",
+     "price": "9286",
+     "popularity": "45775"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Nitro A311",
+     "price": "7769",
+     "popularity": "44273"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy E7",
+     "price": "15763",
+     "popularity": "40345"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy Core 2",
+     "price": "5907",
+     "popularity": "36082"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Lenovo A6000 Plus",
+     "price": "7499",
+     "popularity": "32727"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Samsung  Galaxy S4",
+     "price": "14999",
+     "popularity": "31466"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Apple iPhone 4S 8GB",
+     "price": "12368",
+     "popularity": "30996"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Microsoft Lumia 535",
+     "price": "6874",
+     "popularity": "29965"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy Grand 2",
+     "price": "11466",
+     "popularity": "28731"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Juice 2",
+     "price": "7085",
+     "popularity": "28649"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Apple iPhone 5S",
+     "price": "33999",
+     "popularity": "28628"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy Core Prime",
+     "price": "7416",
+     "popularity": "25586"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Sony Xperia Z Ultra",
+     "price": "17849",
+     "popularity": "25405"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "YU Yureka",
+     "price": "8999",
+     "popularity": "24877"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy A5",
+     "price": "17723",
+     "popularity": "22201"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy S6",
+     "price": "37999",
+     "popularity": "20983"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Microsoft Lumia 540 Dual SIM",
+     "price": "8652",
+     "popularity": "20533"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Sony Xperia C3",
+     "price": "14920",
+     "popularity": "19723"
+   },
+ {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Unite 2 A106 (8GB)",
+     "price": "5078",
+     "popularity": "18873"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Unite 3 Q372",
+     "price": "5383",
+     "popularity": "18660"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy A7",
+     "price": "22091",
+     "popularity": "17934"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Samsung  Galaxy S5",
+     "price": "22499",
+     "popularity": "17928"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy E5",
+     "price": "13599",
+     "popularity": "17780"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Xiaomi Mi4",
+     "price": "14999",
+     "popularity": "17304"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Nokia X2 Dual SIM",
+     "price": "4499",
+     "popularity": "16032"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy Note 3",
+     "price": "25099",
+     "popularity": "15911"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Nokia Lumia 730",
+     "price": "11099",
+     "popularity": "15847"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "HTC Desire 626G+",
+     "price": "13548",
+     "popularity": "15820"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas A1",
+     "price": "4419",
+     "popularity": "15372"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung Z1 Tizen",
+     "price": "4292",
+     "popularity": "15174"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "HTC Desire 826",
+     "price": "20294",
+     "popularity": "15043"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Lenovo A7000",
+     "price": "8999",
+     "popularity": "14925"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Asus  Zenfone 5 (16GB)",
+     "price": "8902",
+     "popularity": "14710"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Apple iPhone 6 64GB",
+     "price": "51499",
+     "popularity": "14686"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Nitro 2 E311",
+     "price": "9179",
+     "popularity": "14653"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Sony Xperia M2 Dual",
+     "price": "12499",
+     "popularity": "14442"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Microsoft Lumia 640 XL",
+     "price": "11931",
+     "popularity": "14417"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "HTC  Desire 526G Plus",
+     "price": "8916",
+     "popularity": "14400"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Lenovo A6000",
+     "price": "6659",
+     "popularity": "13803"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Motorola Moto G 2nd Generation (16GB)",
+     "price": "10999",
+     "popularity": "13566"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Fire 4",
+     "price": "5354",
+     "popularity": "13414"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy Note 4",
+     "price": "38899",
+     "popularity": "13085"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Knight A350",
+     "price": "19999",
+     "popularity": "12309"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Micromax Unite 2 A106",
+     "price": "5058",
+     "popularity": "12268"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung  Galaxy S3 Neo",
+     "price": "11047",
+     "popularity": "12235"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung  Galaxy Note 3 Neo",
+     "price": "17212",
+     "popularity": "11662"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Intex Aqua Power HD",
+     "price": "7904",
+     "popularity": "11479"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Sony Xperia C",
+     "price": "10069",
+     "popularity": "11372"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Intex Aqua Power Plus",
+     "price": "7649",
+     "popularity": "11272"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "HTC Desire 816G Dual SIM",
+     "price": "14423",
+     "popularity": "11158"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Sony Xperia E1 Dual",
+     "price": "5250",
+     "popularity": "11095"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "HTC Desire 620G",
+     "price": "11478",
+     "popularity": "10557"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Apple iPhone 4S 16GB",
+     "price": "20100",
+     "popularity": "10442"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy S6 Edge",
+     "price": "45500",
+     "popularity": "10431"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Sony Xperia E3 Dual",
+     "price": "9299",
+     "popularity": "9895"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Sony Xperia M Dual",
+     "price": "6990",
+     "popularity": "9825"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Samsung  Galaxy Star Pro Duos",
+     "price": "3893",
+     "popularity": "9725"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Lenovo A536",
+     "price": "5343",
+     "popularity": "9673"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "HTC Desire 820s",
+     "price": "18137",
+     "popularity": "9610"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "HTC Desire 616",
+     "price": "8969",
+     "popularity": "9606"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Nokia Lumia 530 Dual SIM",
+     "price": "4242",
+     "popularity": "9601"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Asus Zenfone 2",
+     "price": "12999",
+     "popularity": "9560"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Doodle 3 A102",
+     "price": "5796",
+     "popularity": "9403"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Apple iPhone 6 Plus",
+     "price": "51999",
+     "popularity": "9145"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Huawei Honor 4X",
+     "price": "11999",
+     "popularity": "9132"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy Grand Neo Plus",
+     "price": "7947",
+     "popularity": "8954"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Sony Xperia Z1",
+     "price": "23319",
+     "popularity": "8857"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy A3",
+     "price": "12664",
+     "popularity": "8832"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Lava Iris X1 Atom",
+     "price": "4099",
+     "popularity": "8823"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Motorola  Moto E",
+     "price": "4999",
+     "popularity": "8585"
+   },
+ {
+     "subcategory": "mobile",
+     "title": "Xiaomi Redmi Note 4G",
+     "price": "9999",
+     "popularity": "8533"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy J1",
+     "price": "6197",
+     "popularity": "8378"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Xiaomi Redmi 2",
+     "price": "6999",
+     "popularity": "8309"
+   },
+ {
+     "subcategory": "mobile",
+     "title": "Nokia Lumia 630",
+     "price": "4499",
+     "popularity": "8137"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "HTC Desire 820",
+     "price": "21250",
+     "popularity": "8130"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Intex Aqua Star II",
+     "price": "5014",
+     "popularity": "8066"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Sony Xperia Z3",
+     "price": "34415",
+     "popularity": "7986"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Fire 2 A104",
+     "price": "5245",
+     "popularity": "7827"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Apple iPhone 5C (8 GB)",
+     "price": "21847",
+     "popularity": "7730"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Sony Xperia M4 Aqua Dual",
+     "price": "19304",
+     "popularity": "7720"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy S Duos 3 ",
+     "price": "5363",
+     "popularity": "7313"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Gionee Marathon M3",
+     "price": "9774",
+     "popularity": "7276"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Doodle 3 A102 (8 GB)",
+     "price": "5759",
+     "popularity": "7192"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Sony Xperia E4 Dual",
+     "price": "9817",
+     "popularity": "7178"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Sony Xperia T3",
+     "price": "13023",
+     "popularity": "7166"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Motorola Moto E (2nd Gen)",
+     "price": "6999",
+     "popularity": "7058"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Microsoft Lumia 640",
+     "price": "8999",
+     "popularity": "6933"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "LG  Google Nexus 5",
+     "price": "19121",
+     "popularity": "6923"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "HTC Desire 516",
+     "price": "7513",
+     "popularity": "6745"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Bolt AD4500",
+     "price": "3654",
+     "popularity": "6685"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Nokia 130 Dual SIM",
+     "price": "1280",
+     "popularity": "6633"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Nokia 105",
+     "price": "837",
+     "popularity": "6593"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy S3",
+     "price": "17000",
+     "popularity": "6448"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Intex Aqua M5",
+     "price": "4162",
+     "popularity": "6378"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Apple iPhone 5S 32GB",
+     "price": "40399",
+     "popularity": "6347"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Xiaomi Redmi 1S",
+     "price": "5399",
+     "popularity": "6246"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Nokia Lumia 1320",
+     "price": "11499",
+     "popularity": "6221"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas HD Plus A190",
+     "price": "6800",
+     "popularity": "6153"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy Alpha",
+     "price": "20397",
+     "popularity": "6107"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Xpress",
+     "price": "5541",
+     "popularity": "6078"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Sony Xperia Z2",
+     "price": "29899",
+     "popularity": "6024"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Nokia Lumia 630 Dual SIM",
+     "price": "4674",
+     "popularity": "6021"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy J1 4G",
+     "price": "6197",
+     "popularity": "5980"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Nokia 225 Dual Sim",
+     "price": "2634",
+     "popularity": "5967"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Knight Cameo A290",
+     "price": "6374",
+     "popularity": "5872"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "OnePlus One",
+     "price": "21998",
+     "popularity": "5857"
+   },
+ {
+     "subcategory": "mobile",
+     "title": "Asus  Zenfone 5 (8GB)",
+     "price": "8499",
+     "popularity": "5801"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "YU Yuphoria",
+     "price": "6999",
+     "popularity": "5780"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy Star Advance G350E",
+     "price": "4671",
+     "popularity": "5759"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas 2 Colors A120",
+     "price": "6289",
+     "popularity": "5735"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Nokia XL",
+     "price": "6197",
+     "popularity": "5700"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Nitro A310",
+     "price": "10029",
+     "popularity": "5633"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Intex Aqua Star II HD",
+     "price": "5602",
+     "popularity": "5603"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "HTC Desire 816G Plus Octa Core",
+     "price": "15640",
+     "popularity": "5493"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Sony Xperia C4 Dual",
+     "price": "24999",
+     "popularity": "5397"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Win W121",
+     "price": "5490",
+     "popularity": "5374"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Nokia Lumia 638",
+     "price": "5499",
+     "popularity": "5370"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Sony Xperia M",
+     "price": "8620",
+     "popularity": "5357"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Apple iPhone 4S 32GB",
+     "price": "18499",
+     "popularity": "5266"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Apple iPhone 6 Plus 64GB",
+     "price": "61449",
+     "popularity": "5181"
+   },
+ {
+     "subcategory": "mobile",
+     "title": "Sony Xperia T2 Ultra Dual",
+     "price": "18943",
+     "popularity": "5173"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Lenovo P70",
+     "price": "13506",
+     "popularity": "5143"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Gionee Pioneer P4",
+     "price": "6103",
+     "popularity": "5132"
+   },
+   {
+     "subcategory": "tablet",
+     "title": "Apple  iPad Mini",
+     "price": "15215",
+     "popularity": "5130"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Lava Iris X1 Grand",
+     "price": "6299",
+     "popularity": "5117"
+   },
+ {
+     "subcategory": "mobile",
+     "title": "Karbonn Machone Titanium S310",
+     "price": "5046",
+     "popularity": "5115"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Intex Aqua HD 5.0",
+     "price": "6507",
+     "popularity": "5086"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Panasonic T40",
+     "price": "4225",
+     "popularity": "5057"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Motorola Moto E 4G (2nd Gen)",
+     "price": "7499",
+     "popularity": "4981"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Sony Xperia E4g Dual SIM",
+     "price": "10761",
+     "popularity": "4945"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Samsung Guru Music 2",
+     "price": "1485",
+     "popularity": "4941"
+   },
+ {
+     "subcategory": "mobile",
+     "title": "Panasonic Eluga S",
+     "price": "7884",
+     "popularity": "4758"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Intex  Aqua N11",
+     "price": "3144",
+     "popularity": "4685"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Lava Iris X8",
+     "price": "8555",
+     "popularity": "4659"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Doodle 4",
+     "price": "7624",
+     "popularity": "4627"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Samsung  Galaxy S4 Mini",
+     "price": "13501",
+     "popularity": "4575"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Lava  Iris X1 Mini",
+     "price": "4499",
+     "popularity": "4540"
+   },
+   {
+     "subcategory": "tablet",
+     "title": "Samsung Galaxy Tab 3 Neo 8GB (Wi-Fi 3G)",
+     "price": "8244",
+     "popularity": "4515"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Samsung  Galaxy Grand Neo",
+     "price": "9349",
+     "popularity": "4472"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Apple iPhone 6 128GB",
+     "price": "52000",
+     "popularity": "4431"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Nokia 220",
+     "price": "2210",
+     "popularity": "4403"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Xiaomi Mi4 64GB",
+     "price": "19999",
+     "popularity": "4398"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Samsung Metro DUOS C3322",
+     "price": "2422",
+     "popularity": "4396"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "HTC Desire 816",
+     "price": "21090",
+     "popularity": "4385"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy Core Prime 4G",
+     "price": "9799",
+     "popularity": "4366"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Bolt A064",
+     "price": "2999",
+     "popularity": "4334"
+   },
+ {
+     "subcategory": "mobile",
+     "title": "Xolo Prime",
+     "price": "4460",
+     "popularity": "4269"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Sony Xperia E3",
+     "price": "8499",
+     "popularity": "4183"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Microsoft Lumia 435 Dual SIM",
+     "price": "4620",
+     "popularity": "4172"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Gionee Elife S7",
+     "price": "19844",
+     "popularity": "4146"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "BlackBerry Z10",
+     "price": "15995",
+     "popularity": "4083"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas 4 Plus A315",
+     "price": "9217",
+     "popularity": "3980"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Gold A300",
+     "price": "14674",
+     "popularity": "3960"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Sony Xperia T2 Ultra",
+     "price": "16857",
+     "popularity": "3956"
+   },
+ {
+     "subcategory": "mobile",
+     "title": "Samsung  Galaxy Note 2",
+     "price": "23352",
+     "popularity": "3944"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Karbonn  A6 Turbo",
+     "price": "3240",
+     "popularity": "3921"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas XL2 A109",
+     "price": "5609",
+     "popularity": "3905"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Sony  Xperia E",
+     "price": "4544",
+     "popularity": "3899"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "BlackBerry Z3",
+     "price": "11729",
+     "popularity": "3851"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Panasonic P55",
+     "price": "8292",
+     "popularity": "3829"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Nokia Lumia 520",
+     "price": "5800",
+     "popularity": "3823"
+   },
+ {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy S6 64GB",
+     "price": "46199",
+     "popularity": "3765"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Lenovo S850",
+     "price": "9774",
+     "popularity": "3756"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Joy X1800",
+     "price": "634",
+     "popularity": "3719"
+   },
+{
+     "subcategory": "mobile",
+     "title": "Huawei Honor 4C",
+     "price": "11999",
+     "popularity": "3698"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Gionee Elife S5.1",
+     "price": "11799",
+     "popularity": "3677"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Nokia Lumia 625",
+     "price": "7598",
+     "popularity": "3660"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Knight 2",
+     "price": "13037",
+     "popularity": "3656"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Apple iPhone 6 Plus 128GB",
+     "price": "54700",
+     "popularity": "3649"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung  Galaxy S Duos 2",
+     "price": "6922",
+     "popularity": "3618"
+   },
+ {
+     "subcategory": "mobile",
+     "title": "HTC  Desire 526G Plus",
+     "price": "8925",
+     "popularity": "3539"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Asus Zenfone 2 ZE551ML (4GB RAM 32GB ROM 1.8 GHz)",
+     "price": "18999",
+     "popularity": "3523"
+   },
+   {
+     "subcategory": "tablet",
+     "title": "Samsung  Galaxy Tab 4 7.0 (3G)",
+     "price": "12499",
+     "popularity": "3522"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Karbonn Titanium Octane Plus",
+     "price": "9990",
+     "popularity": "3499"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Sony  Xperia Z",
+     "price": "18790",
+     "popularity": "3498"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Micromax X3203",
+     "price": "1749",
+     "popularity": "3493"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Intex Aqua Xtreme",
+     "price": "11042",
+     "popularity": "3472"
+   },
+  {
+     "subcategory": "tablet",
+     "title": "Micromax Canvas Tab P480",
+     "price": "6400",
+     "popularity": "3469"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Samsung Guru E1207",
+     "price": "1365",
+     "popularity": "3417"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Gionee M2",
+     "price": "7522",
+     "popularity": "3408"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Intex Aqua Speed HD",
+     "price": "6493",
+     "popularity": "3401"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Intex Aqua Power",
+     "price": "6714",
+     "popularity": "3390"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung E1200",
+     "price": "944",
+     "popularity": "3386"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Xolo Win Q1000",
+     "price": "5799",
+     "popularity": "3375"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy Star 2",
+     "price": "3934",
+     "popularity": "3372"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Nokia 215",
+     "price": "1760",
+     "popularity": "3353"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Apple iPhone 5C",
+     "price": "29000",
+     "popularity": "3346"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Karbonn Sparkle V",
+     "price": "3999",
+     "popularity": "3321"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Samsung  Galaxy Core",
+     "price": "7384",
+     "popularity": "3289"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy S Duos",
+     "price": "6499",
+     "popularity": "3241"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Intex Aqua 3G Plus",
+     "price": "2882",
+     "popularity": "3167"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Huawei Honor Bee",
+     "price": "4499",
+     "popularity": "3143"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Gionee  M2",
+     "price": "7555",
+     "popularity": "3130"
+   },
+{
+     "subcategory": "mobile",
+     "title": "Sony Xperia M4 Aqua",
+     "price": "19344",
+     "popularity": "3030"
+   },
+ {
+     "subcategory": "mobile",
+     "title": "Apple iPhone 4",
+     "price": "12749",
+     "popularity": "3028"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Nokia Lumia 525",
+     "price": "5649",
+     "popularity": "3027"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Microsoft Lumia 532",
+     "price": "5468",
+     "popularity": "3021"
+   },
+ {
+     "subcategory": "mobile",
+     "title": "Intex Cloud M5 II",
+     "price": "4699",
+     "popularity": "3001"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Xolo Win Q900s",
+     "price": "5397",
+     "popularity": "2956"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Play Q355",
+     "price": "6052",
+     "popularity": "2940"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Motorola Nexus 6",
+     "price": "34999",
+     "popularity": "2924"
+   },
+    {
+     "subcategory": "tablet",
+     "title": "Samsung Galaxy Tab 3 T211 8GB (Wi-Fi 3G)",
+     "price": "8999",
+     "popularity": "2900"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy S2 I9100",
+     "price": "20050",
+     "popularity": "2855"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy Ace NXT",
+     "price": "4522",
+     "popularity": "2832"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Apple iPhone 5S 64GB",
+     "price": "41999",
+     "popularity": "2820"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Microsoft LUMIA 430 Dual SIM",
+     "price": "4620",
+     "popularity": "2781"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Intex Aqua Speed",
+     "price": "5864",
+     "popularity": "2759"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Panasonic Eluga I",
+     "price": "6459",
+     "popularity": "2751"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Gionee P2S",
+     "price": "4044",
+     "popularity": "2742"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Nokia X",
+     "price": "4590",
+     "popularity": "2716"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Pep",
+     "price": "4499",
+     "popularity": "2671"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Karbonn  Titanium Dazzle S201",
+     "price": "4484",
+     "popularity": "2658"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Nokia Lumia 930",
+     "price": "27999",
+     "popularity": "2642"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Lenovo S660",
+     "price": "6184",
+     "popularity": "2623"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Huawei Honor Holly",
+     "price": "6880",
+     "popularity": "2616"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Panasonic Eluga L 4G",
+     "price": "10349",
+     "popularity": "2615"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Vivo X5 Max",
+     "price": "29980",
+     "popularity": "2595"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "HTC One (M8)",
+     "price": "31999",
+     "popularity": "2591"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Apple iPhone 3GS 16GB",
+     "price": "12179",
+     "popularity": "2579"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "HTC Desire 326G",
+     "price": "8624",
+     "popularity": "2570"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Panasonic ELUGA A",
+     "price": "5674",
+     "popularity": "2569"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Lenovo Vibe X2",
+     "price": "14444",
+     "popularity": "2554"
+   },
+ {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy Note Edge",
+     "price": "47460",
+     "popularity": "2539"
+   },
+    {
+     "subcategory": "tablet",
+     "title": "Dell Venue 7 16GB (Wi-Fi, 3G)",
+     "price": "7550",
+     "popularity": "2517"
+   },
+    {
+     "subcategory": "tablet",
+     "title": "Micromax Canvas Tab P666",
+     "price": "7479",
+     "popularity": "2510"
+   },
+ {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy S6 Edge 64GB",
+     "price": "54699",
+     "popularity": "2499"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Panasonic ELUGA U",
+     "price": "11600",
+     "popularity": "2465"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Asus Zenfone 2 ZE551ML (2GB RAM 16GB ROM 1.8 GHz)",
+     "price": "14999",
+     "popularity": "2445"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Sony Xperia Z3 Compact",
+     "price": "31650",
+     "popularity": "2442"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Sony Xperia E1",
+     "price": "5211",
+     "popularity": "2414"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Bolt A065",
+     "price": "3051",
+     "popularity": "2405"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Sony  Xperia ZR",
+     "price": "15990",
+     "popularity": "2374"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Micromax Bolt X088",
+     "price": "636",
+     "popularity": "2366"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Nokia Lumia 830",
+     "price": "20600",
+     "popularity": "2361"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax  Canvas 4",
+     "price": "8597",
+     "popularity": "2353"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Gionee Elife S5.5",
+     "price": "14431",
+     "popularity": "2335"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Nokia Lumia 1020 (EOS)",
+     "price": "29990",
+     "popularity": "2332"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Motorola Moto X (2nd Gen)",
+     "price": "21999",
+     "popularity": "2328"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Asus Zenfone C",
+     "price": "6235",
+     "popularity": "2318"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "LG  G3",
+     "price": "28500",
+     "popularity": "2317"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung  Galaxy Grand Duos",
+     "price": "11499",
+     "popularity": "2306"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Intex Aqua Y2 Pro",
+     "price": "3523",
+     "popularity": "2297"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "IBall Andi 4L Pulse",
+     "price": "2999",
+     "popularity": "2280"
+   },
+ {
+     "subcategory": "mobile",
+     "title": "Lenovo S90",
+     "price": "15554",
+     "popularity": "2271"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Fire 3 A096",
+     "price": "5069",
+     "popularity": "2270"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Karbonn Titanium Wind W4",
+     "price": "2719",
+     "popularity": "2254"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Karbonn Titanium S8",
+     "price": "4999",
+     "popularity": "2252"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Panasonic P81",
+     "price": "14990",
+     "popularity": "2215"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Gionee Pioneer P6",
+     "price": "7500",
+     "popularity": "2185"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Turbo A250",
+     "price": "9161",
+     "popularity": "2171"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Lava Iris Fuel 50",
+     "price": "6649",
+     "popularity": "2161"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "HTC One M9 Plus",
+     "price": "42999",
+     "popularity": "2149"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Spice Dream Uno Mi-498",
+     "price": "3999",
+     "popularity": "2148"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "LG G4",
+     "price": "42999",
+     "popularity": "2136"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Nokia 108 Dual SIM",
+     "price": "1539",
+     "popularity": "2134"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Bolt A67",
+     "price": "3960",
+     "popularity": "2131"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "LG G3 Stylus",
+     "price": "13077",
+     "popularity": "2119"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax  Bolt Q324",
+     "price": "3169",
+     "popularity": "2105"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Xolo 8X-1000",
+     "price": "9999",
+     "popularity": "2103"
+   },
+ {
+     "subcategory": "mobile",
+     "title": "Lava Iris X5",
+     "price": "7490",
+     "popularity": "2102"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Lenovo A369i",
+     "price": "3439",
+     "popularity": "2099"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Bolt S300",
+     "price": "2538",
+     "popularity": "2086"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Xolo Omega 5.5",
+     "price": "8799",
+     "popularity": "2068"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy Trend Duos S7392",
+     "price": "5699",
+     "popularity": "2024"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Fire A093",
+     "price": "4327",
+     "popularity": "2002"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Intex Cloud Power Plus",
+     "price": "8599",
+     "popularity": "1993"
+   },
+   {
+     "subcategory": "tablet",
+     "title": "Micromax Funbook P280 4GB (Wi-Fi, 3G via USB Dongle)",
+     "price": "3982",
+     "popularity": "1956"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "HTC Desire 310",
+     "price": "6949",
+     "popularity": "1956"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Intex  Aqua 4.5E",
+     "price": "3472",
+     "popularity": "1952"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung  Galaxy Grand Quattro",
+     "price": "10659",
+     "popularity": "1936"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Xiaomi Mi 3",
+     "price": "17743",
+     "popularity": "1934"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Gionee Elife E7 Mini",
+     "price": "12399",
+     "popularity": "1926"
+   },
+   {
+     "subcategory": "tablet",
+     "title": "Dell Venue 7 3740 16GB (Wi-Fi 3G)",
+     "price": "7569",
+     "popularity": "1907"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Hue 2",
+     "price": "11818",
+     "popularity": "1906"
+   },
+ {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Selfie A255",
+     "price": "12300",
+     "popularity": "1904"
+   },
+    {
+     "subcategory": "tablet",
+     "title": "IBall Slide i701",
+     "price": "4864",
+     "popularity": "1899"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Apple iPhone 4S 64GB",
+     "price": "34999",
+     "popularity": "1889"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Xolo Q1200",
+     "price": "5799",
+     "popularity": "1887"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Intex Aqua R2",
+     "price": "1999",
+     "popularity": "1884"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Xolo One",
+     "price": "4759",
+     "popularity": "1877"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "HTC One E8 Dual SIM",
+     "price": "28152",
+     "popularity": "1874"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Intex Aqua i5 HD",
+     "price": "9299",
+     "popularity": "1862"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Nokia X+",
+     "price": "4589",
+     "popularity": "1837"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Lava Iris Win1",
+     "price": "4000",
+     "popularity": "1837"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Blaze MT500",
+     "price": "5415",
+     "popularity": "1836"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "HTC Desire 820Q",
+     "price": "20069",
+     "popularity": "1831"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Intex Aqua Star Power",
+     "price": "6290",
+     "popularity": "1820"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Sony  Xperia SP",
+     "price": "11249",
+     "popularity": "1815"
+   },
+   {
+     "subcategory": "tablet",
+     "title": "Lenovo Tab 2 A7-10 8GB (Wi-Fi)",
+     "price": "4849",
+     "popularity": "1799"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Bolt A71",
+     "price": "3825",
+     "popularity": "1798"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Lenovo A5000",
+     "price": "8510",
+     "popularity": "1796"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Nokia Lumia 1520",
+     "price": "33923",
+     "popularity": "1768"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Spice Stellar 518",
+     "price": "6099",
+     "popularity": "1754"
+   },
+   {
+     "subcategory": "tablet",
+     "title": "Mediatek N966",
+     "price": "2549",
+     "popularity": "1744"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Micromax Canvas Juice A177",
+     "price": "6079",
+     "popularity": "1707"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Infocus  M2",
+     "price": "5049",
+     "popularity": "1705"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "HTC One E9+",
+     "price": "33198",
+     "popularity": "1703"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "LG Google Nexus 5 32GB",
+     "price": "23990",
+     "popularity": "1699"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Lenovo A319",
+     "price": "4299",
+     "popularity": "1693"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Karbonn Titanium S5 Ultra",
+     "price": "5065",
+     "popularity": "1682"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung Metro B312E",
+     "price": "1804",
+     "popularity": "1676"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "BlackBerry Z30",
+     "price": "21150",
+     "popularity": "1667"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "HTC Desire 210",
+     "price": "6609",
+     "popularity": "1662"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Lenovo S60",
+     "price": "12000",
+     "popularity": "1648"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Apple iPhone 4 16GB",
+     "price": "26999",
+     "popularity": "1640"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Gionee Pioneer P3",
+     "price": "4963",
+     "popularity": "1613"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Sony  Xperia U",
+     "price": "11700",
+     "popularity": "1608"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung Omnia M",
+     "price": "5798",
+     "popularity": "1607"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung Galaxy Grand Duos",
+     "price": "13600",
+     "popularity": "1606"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Karbonn A19 Plus",
+     "price": "4690",
+     "popularity": "1604"
+   },
+    {
+     "subcategory": "mobile",
+     "title": "Intex Cloud M6",
+     "price": "5666",
+     "popularity": "1602"
+   },
+  {
+     "subcategory": "tablet",
+     "title": "Samsung Galaxy Tab 2 P3110 Wi-Fi",
+     "price": "6999",
+     "popularity": "1600"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Sony Xperia T3 Dual SIM",
+     "price": "27990",
+     "popularity": "1585"
+   },
+  {
+     "subcategory": "mobile",
+     "title": "Lava Iris X9",
+     "price": "10960",
+     "popularity": "1580"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Huawei Honor 6",
+     "price": "16999",
+     "popularity": "1580"
+   },
+   {
+     "subcategory": "tablet",
+     "title": "IBall 6351-Q40i",
+     "price": "3999",
+     "popularity": "240"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Samsung E1270 Flip",
+     "price": "2499",
+     "popularity": "240"
+   },
+   {
+     "subcategory": "mobile",
+     "title": "Zen Ultrafone 402",
+     "price": "3528",
+     "popularity": "239"
+   },
+   {
+    "subcategory": "mobile",
+    "title": "HTC One M8 Eye",
+    "price": "30999",
+    "popularity": "1568"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Nokia 105 Dual SIM",
+    "price": "1030",
+    "popularity": "1568"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Sony  Xperia E Dual",
+    "price": "4990",
+    "popularity": "1565"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "IBall Enigma Andi 4.5M",
+    "price": "6303",
+    "popularity": "1563"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Nokia Asha 501",
+    "price": "4019",
+    "popularity": "1561"
+  },
+   {
+    "subcategory": "tablet",
+    "title": "Lenovo A7-30 8GB (WiFi 3G)",
+    "price": "7499",
+    "popularity": "1560"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Vivo  Y28",
+    "price": "9990",
+    "popularity": "1557"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Asus Zenfone 6",
+    "price": "13850",
+    "popularity": "1539"
+  },
+   {
+    "subcategory": "tablet",
+    "title": "HP  Slate 7 Voice Tab 16GB",
+    "price": "9996",
+    "popularity": "1525"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Intex Aqua V4",
+    "price": "2489",
+    "popularity": "1519"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "HTC 310 (1GB RAM)",
+    "price": "7888",
+    "popularity": "1516"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Micromax Canvas Hue ",
+    "price": "8839",
+    "popularity": "1514"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Micromax Canvas 2 Colors A120 (8 GB ROM)",
+    "price": "6197",
+    "popularity": "1505"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "BlackBerry Passport",
+    "price": "36499",
+    "popularity": "1488"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Motorola Moto G2",
+    "price": "11799",
+    "popularity": "1486"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Sony Xperia Z1 Compact",
+    "price": "24899",
+    "popularity": "1483"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Micromax Bolt A24",
+    "price": "2136",
+    "popularity": "1477"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Micromax  Canvas Power A96",
+    "price": "5939",
+    "popularity": "1470"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Micromax Joy X1850",
+    "price": "809",
+    "popularity": "1469"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Micromax Canvas 2.2 A114",
+    "price": "6499",
+    "popularity": "1459"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Lenovo A328",
+    "price": "4844",
+    "popularity": "1451"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Karbonn Titanium S10",
+    "price": "4462",
+    "popularity": "1447"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Nokia Lumia 720",
+    "price": "15983",
+    "popularity": "1444"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Karbonn A5 Turbo",
+    "price": "2163",
+    "popularity": "1438"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Gionee Elife E7",
+    "price": "17957",
+    "popularity": "1433"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "LG G3 Beat",
+    "price": "12749",
+    "popularity": "1433"
+  },
+ {
+    "subcategory": "tablet",
+    "title": "IBall Slide 3G Q7271-IPS20 ",
+    "price": "5857",
+    "popularity": "1431"
+  },
+   {
+    "subcategory": "tablet",
+    "title": "Apple  iPad Mini 2",
+    "price": "21199",
+    "popularity": "1420"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Lava Iris X1 Beats",
+    "price": "5999",
+    "popularity": "1387"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Lenovo S650",
+    "price": "6500",
+    "popularity": "1372"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Micromax  Bolt D321",
+    "price": "4247",
+    "popularity": "1360"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Lenovo S860",
+    "price": "10880",
+    "popularity": "1348"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Spice Smart Flo Mi-359",
+    "price": "2399",
+    "popularity": "1346"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Sony  Xperia L",
+    "price": "10069",
+    "popularity": "1333"
+  },
+  {
+    "subcategory": "tablet",
+    "title": "Micromax Canvas Tab P470",
+    "price": "6796",
+    "popularity": "1332"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "LG G Pro Lite Dual",
+    "price": "10242",
+    "popularity": "1331"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Samsung  Metro Duos",
+    "price": "3465",
+    "popularity": "1328"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Nokia Lumia 925",
+    "price": "20069",
+    "popularity": "1324"
+  },
+  {
+    "subcategory": "tablet",
+    "title": "Apple iPad Air 2",
+    "price": "29416",
+    "popularity": "1310"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Lava Iris Icon",
+    "price": "11098",
+    "popularity": "1310"
+  },
+   {
+    "subcategory": "tablet",
+    "title": "Samsung Galaxy Tab 3 T311 16GB (Wi-Fi 3G)",
+    "price": "13999",
+    "popularity": "1301"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Micromax Bolt D320",
+    "price": "3153",
+    "popularity": "1297"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Micromax A110 Canvas 2",
+    "price": "8490",
+    "popularity": "1278"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Micromax Canvas Blaze HD EG116",
+    "price": "6787",
+    "popularity": "1277"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "LG G2",
+    "price": "22999",
+    "popularity": "1268"
+  },
+ {
+    "subcategory": "mobile",
+    "title": "Acer  Liquid E700",
+    "price": "8049",
+    "popularity": "1268"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Micromax  Canvas Doodle A111",
+    "price": "8500",
+    "popularity": "1263"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Asus Zenfone 2 ZE551ML (4GB RAM 64GB ROM 2.3 GHz)",
+    "price": "22999",
+    "popularity": "1262"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Sony Xperia E4",
+    "price": "11649",
+    "popularity": "1260"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Xolo Q500s IPS",
+    "price": "3799",
+    "popularity": "1256"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Lenovo A526",
+    "price": "5200",
+    "popularity": "1255"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Lava  Iris X8",
+    "price": "7999",
+    "popularity": "1250"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Nokia Lumia 920",
+    "price": "25640",
+    "popularity": "1243"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Nokia Lumia 620",
+    "price": "8795",
+    "popularity": "1240"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "LG L70",
+    "price": "7429",
+    "popularity": "1225"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Panasonic  T41",
+    "price": "5999",
+    "popularity": "1215"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Nokia Asha 206",
+    "price": "3655",
+    "popularity": "1205"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Lava Iris Fuel 25",
+    "price": "5499",
+    "popularity": "1200"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Xolo Omega 5.0",
+    "price": "6374",
+    "popularity": "1193"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Xolo A500S IPS",
+    "price": "4039",
+    "popularity": "1182"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Lenovo A269i",
+    "price": "2124",
+    "popularity": "1179"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Micromax Canvas Elanza 2 A121",
+    "price": "7700",
+    "popularity": "1176"
+  },
+   {
+    "subcategory": "tablet",
+    "title": "Asus 2014 FE170CG Fonepad 7",
+    "price": "7499",
+    "popularity": "1175"
+  },
+ {
+    "subcategory": "mobile",
+    "title": "Intex Aqua i7",
+    "price": "21900",
+    "popularity": "1174"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Coolpad Dazen 1",
+    "price": "9999",
+    "popularity": "1174"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Karbonn A1 Plus Champ",
+    "price": "2252",
+    "popularity": "1172"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Sony Xperia P",
+    "price": "13549",
+    "popularity": "1170"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Intex Aqua Y2 1GB RAM",
+    "price": "4573",
+    "popularity": "1163"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Micromax  Canvas HD A116",
+    "price": "10069",
+    "popularity": "1158"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "LG L Fino D295",
+    "price": "7804",
+    "popularity": "1151"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Samsung Guru Music E1282",
+    "price": "1743",
+    "popularity": "1150"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "BlackBerry Curve 9320",
+    "price": "6499",
+    "popularity": "1143"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Lenovo A680",
+    "price": "6199",
+    "popularity": "1142"
+  },
+  {
+    "subcategory": "tablet",
+    "title": "Dell Venue 7 3741 8GB (Wi-Fi 3G)",
+    "price": "6795",
+    "popularity": "1134"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Nokia Asha 210",
+    "price": "4531",
+    "popularity": "1130"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "IBall Andi 5Q Cobalt Solus",
+    "price": "10031",
+    "popularity": "1128"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "OnePlus One 16GB",
+    "price": "18998",
+    "popularity": "1125"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Panasonic P61",
+    "price": "11699",
+    "popularity": "1125"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Nokia Lumia 510",
+    "price": "4350",
+    "popularity": "1124"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "IBall Andi5 Stallion",
+    "price": "5354",
+    "popularity": "1121"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Xolo A550S IPS",
+    "price": "4123",
+    "popularity": "1107"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Intex Aqua Q3",
+    "price": "5120",
+    "popularity": "1105"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Gionee Elife E6",
+    "price": "15850",
+    "popularity": "1099"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "LG G3 32GB",
+    "price": "31000",
+    "popularity": "1099"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Karbonn  Titanium S15",
+    "price": "3025",
+    "popularity": "1098"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "IBall Andi 5T COBALT 2",
+    "price": "6749",
+    "popularity": "1096"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Micromax A65 Smarty 4.3",
+    "price": "3499",
+    "popularity": "1092"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Karbonn Titanium S25 Klick",
+    "price": "6459",
+    "popularity": "1091"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Sony Xperia J",
+    "price": "6499",
+    "popularity": "1085"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Intex Aqua 4G Plus",
+    "price": "8067",
+    "popularity": "1083"
+  },
+   {
+    "subcategory": "tablet",
+    "title": "IBall Slide Brace X1 16GB (Wi-Fi 3G)",
+    "price": "15899",
+    "popularity": "1081"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Samsung Galaxy Mega 6.3 i9200",
+    "price": "18199",
+    "popularity": "1077"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Gionee Elife E3",
+    "price": "9999",
+    "popularity": "1076"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Samsung Guru E1081",
+    "price": "991",
+    "popularity": "1075"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "HTC Desire EYE",
+    "price": "30284",
+    "popularity": "1075"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Micromax Canvas Unite A092",
+    "price": "4700",
+    "popularity": "1072"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Micromax E390",
+    "price": "2438",
+    "popularity": "1067"
+  },
+ {
+    "subcategory": "tablet",
+    "title": "Micromax Canvas Laptab",
+    "price": "14990",
+    "popularity": "1066"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Spice M-6110",
+    "price": "1999",
+    "popularity": "1063"
+  },
+ {
+    "subcategory": "mobile",
+    "title": "Karbonn  Titanium Mach Two",
+    "price": "7990",
+    "popularity": "1062"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Micromax Bolt A089",
+    "price": "3799",
+    "popularity": "1051"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Micromax X2814",
+    "price": "1249",
+    "popularity": "1045"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "BlackBerry Q5",
+    "price": "12820",
+    "popularity": "1044"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Intex Aqua 3G",
+    "price": "3060",
+    "popularity": "1044"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Samsung Galaxy Star",
+    "price": "3458",
+    "popularity": "1042"
+  },
+  {
+    "subcategory": "tablet",
+    "title": "Samsung  Galaxy Tab S 10.5",
+    "price": "33580",
+    "popularity": "1040"
+  },
+  {
+    "subcategory": "tablet",
+    "title": "Samsung  Galaxy Tab 3",
+    "price": "9799",
+    "popularity": "1035"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Motorola Defy",
+    "price": "5200",
+    "popularity": "1030"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Lenovo Vibe Z",
+    "price": "15790",
+    "popularity": "1028"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "HTC Desire 700",
+    "price": "18061",
+    "popularity": "1020"
+  },
+   {
+    "subcategory": "tablet",
+    "title": "Lenovo A7-30 Tablet 8 GB (WiFi 2G)",
+    "price": "5825",
+    "popularity": "1015"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Celkon Millennium Glory Q5",
+    "price": "4499",
+    "popularity": "1013"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Micromax Canvas Duet 2 EG111",
+    "price": "6779",
+    "popularity": "1009"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Gionee Long L800",
+    "price": "1818",
+    "popularity": "1003"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Spice Stellar Mi-600",
+    "price": "5269",
+    "popularity": "1001"
+  },
+  {
+    "subcategory": "tablet",
+    "title": "IBall 6351-Q40",
+    "price": "3633",
+    "popularity": "995"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Lava Iris X1 8 GB",
+    "price": "12190",
+    "popularity": "988"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "HTC 8S",
+    "price": "10999",
+    "popularity": "987"
+  },
+ {
+    "subcategory": "mobile",
+    "title": "BlackBerry Q10",
+    "price": "20621",
+    "popularity": "985"
+  },
+ {
+    "subcategory": "mobile",
+    "title": "Karbonn K22 Plus",
+    "price": "872",
+    "popularity": "985"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Xolo Q2000L",
+    "price": "7793",
+    "popularity": "980"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "LG L Bello D335",
+    "price": "10890",
+    "popularity": "980"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Sony Xperia Miro",
+    "price": "9500",
+    "popularity": "974"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Samsung Galaxy Mega 2",
+    "price": "18000",
+    "popularity": "969"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Apple iPhone 5C 32GB",
+    "price": "36500",
+    "popularity": "958"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Karbonn Titanium Octane",
+    "price": "7990",
+    "popularity": "956"
+  },
+ {
+    "subcategory": "mobile",
+    "title": "Lava Iris 250",
+    "price": "3999",
+    "popularity": "949"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Motorola Moto X",
+    "price": "35999",
+    "popularity": "942"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Gionee Pioneer P4S ",
+    "price": "7280",
+    "popularity": "939"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Huawei Honor 3C",
+    "price": "8499",
+    "popularity": "935"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Micromax Q25",
+    "price": "1449",
+    "popularity": "934"
+  },
+   {
+    "subcategory": "tablet",
+    "title": "Asus Fonepad 7 8GB (Wi-Fi, 3G)",
+    "price": "7999",
+    "popularity": "933"
+  },
+   {
+    "subcategory": "tablet",
+    "title": "Samsung  Galaxy Tab 4 8.0 (3G)",
+    "price": "26500",
+    "popularity": "922"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Karbonn Titanium S1 Plus",
+    "price": "3306",
+    "popularity": "921"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Samsung Galaxy Note",
+    "price": "24143",
+    "popularity": "912"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Intex Aqua Star 5.0",
+    "price": "6939",
+    "popularity": "910"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Gionee Pioneer P2",
+    "price": "3880",
+    "popularity": "909"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Karbonn Titanium S5 Plus",
+    "price": "6889",
+    "popularity": "900"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Micromax X071",
+    "price": "736",
+    "popularity": "895"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Lava Iris Fuel 10",
+    "price": "6100",
+    "popularity": "894"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Xolo Play 6X 1000",
+    "price": "10000",
+    "popularity": "893"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Gionee CTRL V4S",
+    "price": "8399",
+    "popularity": "890"
+  },
+   {
+    "subcategory": "tablet",
+    "title": "Micromax Canvas Tab P690",
+    "price": "8303",
+    "popularity": "879"
+  },
+ {
+    "subcategory": "mobile",
+    "title": "Infocus M330",
+    "price": "9499",
+    "popularity": "875"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Xolo Q3000",
+    "price": "13399",
+    "popularity": "874"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Micromax A94 Canvas Mad",
+    "price": "4249",
+    "popularity": "874"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Gionee CTRL V6L",
+    "price": "11714",
+    "popularity": "870"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Lenovo A850",
+    "price": "7748",
+    "popularity": "869"
+  },
+  {
+    "subcategory": "tablet",
+    "title": "UbiSlate  7CZ",
+    "price": "3103",
+    "popularity": "864"
+  },
+   {
+    "subcategory": "tablet",
+    "title": "Xiaomi Mi Pad 7.9",
+    "price": "12999",
+    "popularity": "862"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Micromax Bolt A069",
+    "price": "5344",
+    "popularity": "847"
+  },
+  {
+    "subcategory": "tablet",
+    "title": "Dell Venue 3000 Series 7 16GB (Wi-Fi)",
+    "price": "5949",
+    "popularity": "846"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Micromax Canvas Doodle 2 A240",
+    "price": "12000",
+    "popularity": "830"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "LG L90",
+    "price": "9012",
+    "popularity": "829"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "BlackBerry Leap",
+    "price": "20088",
+    "popularity": "829"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Micromax Canvas Turbo Mini A200",
+    "price": "7123",
+    "popularity": "825"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Lava Iris 325 Style",
+    "price": "2799",
+    "popularity": "824"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "LG L 60i X137",
+    "price": "4675",
+    "popularity": "823"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Panasonic T41",
+    "price": "4960",
+    "popularity": "822"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Spice Stellar Mi506",
+    "price": "4499",
+    "popularity": "821"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "HTC One",
+    "price": "47500",
+    "popularity": "820"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Xolo Q1010i",
+    "price": "9949",
+    "popularity": "818"
+  },
+ {
+    "subcategory": "mobile",
+    "title": "Lava Iris Alfa L",
+    "price": "7071",
+    "popularity": "817"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Gionee Elife E7 (32 GB)",
+    "price": "23990",
+    "popularity": "812"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Gionee CTRL V5",
+    "price": "8880",
+    "popularity": "807"
+  },
+  {
+    "subcategory": "tablet",
+    "title": "Dell Venue 7 3740 (16 GB With Voice Call)",
+    "price": "6689",
+    "popularity": "807"
+  },
+   {
+    "subcategory": "mobile",
+    "title": "Nokia Asha 305",
+    "price": "3290",
+    "popularity": "804"
+  },
+  {
+    "subcategory": "mobile",
+    "title": "Panasonic Eluga S Mini",
+    "price": "8099",
+    "popularity": "800"
+  },
+  ];
+
+  for (var i in tableData) {
+    var row = `<tr>
+      <td>${tableData[i].subcategory}</td>
+      <td>${tableData[i].title}</td>
+      <td>${tableData[i].price}</td>
+      <td>${tableData[i].popularity}</td>
+    </tr>`;
+    var table = document.getElementById('table-body');
+    table.innerHTML += row;
+  }
+</script>
+
+</body>
+</html>
